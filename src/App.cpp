@@ -1,11 +1,19 @@
 #include <iostream>
+#include <fstream>
+#include <sstream>
+#include <string>
 
-int main(int argc, char **argv) {
-  // Flush after writing to stdout or stderr
-  std::cout << std::unitbuf;
-  std::cerr << std::unitbuf;
+using namespace std;
 
-  // Put your code here!
+int main(int argc, char** argv)
+{
+	string s = argv[2];
+	std::ifstream infile(s);
 
-  return 0;
+	for (std::string line; getline(infile, line); )
+	{
+		cout << line << endl;
+	}
+
+	return 0;
 }
